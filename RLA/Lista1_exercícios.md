@@ -8,7 +8,11 @@ represente, em fluxograma e em pseudocódigo, um algoritmo para determinar se o 
 ```mermaid
 flowchart TD
 A([Início])-->B{{Digite o número:}}
--->C[/N/]-->D[R=N%2]-->E{R=0}-->|Sim|F{{O número é par}} 
+-->C[/N/]
+C--> T{{N>=0}}
+T-->|Falso|J([Digite um número positivo])
+T
+-->|Verdadeiro|D[R=N%2]-->E{R=0}-->|Sim|F{{O número é par}} 
 E-->|Não|G{{O número é impar}}
 G-->H([Fim])
 F-->H([Fim])
