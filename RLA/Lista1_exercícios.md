@@ -11,9 +11,9 @@ A([Início])-->B{{Digite o número:}}
 -->C[/N/]
 C--> T{N>=0}
 T-->|Falso|J([Digite um número positivo])
+J-->H
 T
 -->|Verdadeiro|D[R=N%2]-->E{R=0}-->|Sim|F{{O número é par}} 
 E-->|Não|G{{O número é impar}}
 G-->H([Fim])
 F-->H([Fim])
-J-->H
