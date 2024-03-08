@@ -9,7 +9,7 @@ represente, em fluxograma e em pseudocódigo, um algoritmo para determinar se o 
 flowchart TD
 A([Início])-->B{{Digite o número:}}
 -->C[/N/]
-C--> T{{N>=0}}
+C--> T{N>=0}
 T-->|Falso|J([Digite um número positivo])
 T
 -->|Verdadeiro|D[R=N%2]-->E{R=0}-->|Sim|F{{O número é par}} 
