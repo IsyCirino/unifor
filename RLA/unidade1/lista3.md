@@ -144,22 +144,39 @@ Faça um algoritmo que exiba na tela uma contagem de 0 até 30, exibindo apenas 
 
 ```mermaid
 flowchart TD
-A([INICIO]) --> B([FIM])
+A([INICIO]) --> B[[i de 0 até 30 passo 3]]
+B-->|Verdadeiro|C{{i}}
+B--> |Falso|D([Fim])
+C-->|loop|B
+
 ```
 
 #### Pseudocódigo (1.0 ponto)
 
 ```
-Algoritmo ClassificaCategoria
-FIM_ALGORITMO
+Algoritmo mutiplos_3
+DECLARE i : INTEIRO
+PARA i DE 0 ATE 30 PASSO 3 FAÇA
+	ESCREVA i
+FIM_PARA
+FIM
 ```
 
 #### Teste de mesa (0.5 ponto)
 
-| nome_coluna1 | nome_coluna2 | nome_coluna3 | nome_coluna4 | nome_coluna5 | 
-|      --      |      --      |      --      |      --      |      --      | 
-| Adicione     | espaço       | se quiser    |  alinhar     | as barras    |
-| verticais,   | mas          | não é        | obrigatório. | Entendido ?  |
+| i | Saída|
+|      --      |      --      |     
+| 0 | 0 |  
+| 3 | 3 |  
+| 6 | 6 |  
+| 9 | 9 |  
+| 12 | 12 |  
+| 15| 15 |  
+| 18 | 18 |  
+| 21 | 21 |
+| 24 | 24 |  
+| 27 | 27 |  
+| 30 | 30|  
 
 ### Exercício 03 (2.5 pontos)
 Dada uma sequência de números inteiros, calcular a sua soma. 
