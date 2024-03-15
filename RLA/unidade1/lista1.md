@@ -22,7 +22,7 @@ I--> J
 #### Pseudocódigo
 ```
 Algorítmo Média_notas:
-DECLARE média, nota1,nota2: Real
+DECLARE média, nota1,nota2: REAL
 INÍCIO:
 ESCREVA "Digite a nota 1"
 LEIA nota1
@@ -61,7 +61,7 @@ G-->H([Fim])
 #### Pseudocódigo
 ```
 Algorítmo reajuste_salarial:
-DECLARE salarioAtual,novoSalario: Real
+DECLARE salarioAtual,novoSalario: REAL
 INÍCIO:
 ESCREVA "Digite salário atual:"
 LEIA salarioAtual
@@ -143,7 +143,7 @@ G-->H
 #### Pseudocódigo
 ```
 Algorítmo idade_CNH:
-DECLARE idade: Real
+DECLARE idade: REAL
 INÍCIO:
 ESCREVA "Digite sua idade:"
 LEIA idade
