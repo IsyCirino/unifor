@@ -156,6 +156,7 @@ C-->|loop|B
 ```
 Algoritmo mutiplos_3
 DECLARE i : INTEIRO
+INÍCIO:
 PARA i DE 0 ATE 30 PASSO 3 FAÇA
 	ESCREVA i
 FIM_PARA
