@@ -2,6 +2,22 @@
 **Nome**: Ian Cirino <br>
 **Disciplina**: Raciocínio lógico e algorítmo
 ## Lista de exercícios 1
+### Exercício 2
+represente, em fluxograma e em pseudocódigo, para calcular a média aritmética entre
+duas notas de um aluno e mostrar sua situação, que pode ser aprovado ou reprovado
+#### Fluxograma
+``` mermaid
+flowchart TD
+A([Início])-->B{{Digite nota 1}}
+B--> C[/leia a nota 1/]
+C--> D{{Digite nota 2}}
+D--> E[/leia nota 2/]
+E--> F["Média=(Nota1 + Nota2)/2"]
+F--> G{M>=7}
+G-->|verdadeiro|H[/O aluno foi aprovado/]
+G-->|Falso|I[/O aluno foi reprovado/]
+H--> J([Fim])
+I--> J
 ### Exercício 3
 represente, em fluxograma e em pseudocódigo, um algoritmo para determinar se o número inteiro é par ou impar
 #### Fluxograma
