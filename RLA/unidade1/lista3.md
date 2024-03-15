@@ -187,22 +187,45 @@ Por exemplo, para a sequência {12, 17, 4, -6, 8, 0}, o seu programa deve escrev
 
 ```mermaid
 flowchart TD
-A([INICIO]) --> B([FIM])
+A([INICIO]) --> B{{"Digite um número qualquer (0 para parar): "}}
+B-->C[/n/]
+C-->D[/sum=0/]
+D-->E{n!=0}
+E-->|sim|F[sum+=n]
+F-->|loop|E
+E-->|não|G{{A soma foi, sum}}
+G-->H([Fim])
+
+
+
 ```
 
 #### Pseudocódigo (1.0 ponto)
 
 ```
-Algoritmo ClassificaCategoria
-FIM_ALGORITMO
+Algoritmo soma_valores
+DECLARE n,sum : REAL
+INÍCIO:
+ESCREVA "Digite um número qualquer (0 para parar)"
+LEIA n
+sum <- 0
+ENQUANTO n!=0 FAÇA
+	sum+=n
+FIM_ENQUANTO
+ESCREVA "A soma foi: ", sum
+FIM
 ```
 
 #### Teste de mesa (0.5 ponto)
 
-| nome_coluna1 | nome_coluna2 | nome_coluna3 | nome_coluna4 | nome_coluna5 | 
-|      --      |      --      |      --      |      --      |      --      | 
-| Adicione     | espaço       | se quiser    |  alinhar     | as barras    |
-| verticais,   | mas          | não é        | obrigatório. | Entendido ?  |
+| n| sum| n!=0| Saída|
+|      --      |      --      |      --      |       --      |  
+| 12| 12| T| |
+| 17| 29|T| |
+| 4| 33| T| |
+| -6| 27| T||
+| 8| 35|T| |
+ |0| 35|F| 35|
 
 ### Exercício 04 (2.5 pontos)
 Escreva um programa que leia a nota de diversos alunos, até que seja digitada uma nota negativa. 
