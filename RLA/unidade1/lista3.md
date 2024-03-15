@@ -97,26 +97,45 @@ F --LOOP--> E
 ### Exercício 01 (2.5 pontos)
 Atualize o algoritmo para determinar se um número inteiro e positivo é par ou ímpar, usando uma laço condicional para aceitar apenas números maiores ou iguais a zero. 
 
-#### Fluxograma (1.0 ponto)
-
-```mermaid
+#### Fluxograma
+``` mermaid
 flowchart TD
-A([INICIO]) --> B([FIM])
+A([Início])-->B{{Digite um número inteiro positivo: }}
+B--> C[/n/]
+C-->D{n<0}
+D--> |não|F[resto = n%2]
+F-->G{{resto==0}}
+G-->|sim|H{{O número digitado é par}}
+G-->|não|I{{O número digitado é impar}}
+D-->|sim|E{{O número digitado é negativo, tente de novo!}}
+E-->|loop|B
+I-->J([Fim])
+H-->J
 ```
-
-#### Pseudocódigo (1.0 ponto)
-
+#### Pseudocódigo
 ```
-Algoritmo ClassificaCategoria
-FIM_ALGORITMO
+Algorítmo impar_par_loop:
+DECLARE n,resto: INTEIRO
+INÍCIO:
+ESCREVA "Digite um número inteiro positivo:"
+LEIA n
+ENQUANTO n<0 FAÇA
+	ESCREVA "o número digitado é negativo. Tente de novo!"
+FIM_ENQUANTO
+resto <- n%2
+SE resto == 0 ENTÃO
+	ESCREVA"O número digitado é par."
+SENAO
+	ESCREVA"o número digitado é impar."
+FIM_SE
+FIM
 ```
-
-#### Teste de mesa (0.5 ponto)
-
-| nome_coluna1 | nome_coluna2 | nome_coluna3 | nome_coluna4 | nome_coluna5 | 
-|      --      |      --      |      --      |      --      |      --      | 
-| Adicione     | espaço       | se quiser    |  alinhar     | as barras    |
-| verticais,   | mas          | não é        | obrigatório. | Entendido ?  |
+####  Teste
+| n |n<0| resto | resto=0| Saída|
+| -- | -- | -- | -- | --|
+|-1| T| | |O número digitado é negativo. Tente de novo! | 
+|4| F |0|T| O número digitado é par.|
+|5| F |1|F|O número digitado é impar. |
 
 ### Exercício 02 (2.5 pontos)
 Faça um algoritmo que exiba na tela uma contagem de 0 até 30, exibindo apenas os múltiplos de 3.
