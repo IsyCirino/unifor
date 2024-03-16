@@ -274,4 +274,4 @@ FIM
 | 5| T| 1| 5|
 | 17| T|2|22|
 | 4| T| 3| 26 |
-| -6| F|3 |26|"A Foram 3 notas e sua média foi 8,666666 |
+| -6| F|3 |26|A Foram 3 notas e sua média foi 8,666666 |
