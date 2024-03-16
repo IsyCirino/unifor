@@ -65,7 +65,7 @@ G-->H{{Digite o quarto número:}}
 H-->I[/n4/]
 I-->J["media=(n1+n2+n3+n4)/4"]
 J-->K{{Média igual à ,media}}
-k-->L([Fim])
+K-->L([Fim])
 ```
 
 #### Pseudocódigo (1.0 ponto)
