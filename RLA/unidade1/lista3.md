@@ -236,19 +236,42 @@ Ex. Foram lidas 14 notas. A média aritmética é 6.75!
 
 ```mermaid
 flowchart TD
-A([INICIO]) --> B([FIM])
+A([INICIO]) --> B[/cont=1, sum=0/]
+B-->C{{Digite a nota,cont:}}
+C-->D[/n/]
+D-->E{n<0}
+E-->|verdadeiro|F[media=sum/cont]
+F-->H{{Foram,cont, notas e sua média foi,media. }}
+E-->|falso|G[cont+=1 e sum+=n]
+G-->C
+H-->I([fim])
 ```
 
 #### Pseudocódigo (1.0 ponto)
 
 ```
-Algoritmo ClassificaCategoria
-FIM_ALGORITMO
+Algoritmo media_cont_notas
+DECLARE sum,n: REAL
+DECLARE cont: INTEIRO
+INÍCIO:
+sum <-0
+cont <-1
+n <-0
+ENQUANTO n>=0 FAÇA
+	ESCREVA "Digite nota",cont,":"
+	LEIA n
+	sum+=n
+	cont+=1
+FIM_ENQUANTO
+ESCREVA "A Foram",cont, "notas e sua média foi",media"." 
+FIM
 ```
 
 #### Teste de mesa (0.5 ponto)
 
-| nome_coluna1 | nome_coluna2 | nome_coluna3 | nome_coluna4 | nome_coluna5 | 
-|      --      |      --      |      --      |      --      |      --      | 
-| Adicione     | espaço       | se quiser    |  alinhar     | as barras    |
-| verticais,   | mas          | não é        | obrigatório. | Entendido ?  |
+| n|n>=0 | cont| sum |Saída|
+|      --      |      --      |      --      |       --      |   --      |  
+| 5| T| 1| 5|
+| 17| T|2|22|
+| 4| T| 3| 26 |
+| -6| F|3 |26|"A Foram 3 notas e sua média foi 8,666666 |
