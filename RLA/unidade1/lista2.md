@@ -153,24 +153,61 @@ FIM_ALGORITMO
 
 ### Exercício 04 (2.5 pontos)
 Elaborar um algoritmo que, dada a idade, classifique nas categorias: infantil A (5 - 7 anos), infantil B (8 -10 anos), juvenil A (11 - 13 anos), juvenil B (14 -17 anos) e adulto (maiores que 18 anos).
-
 #### Fluxograma (1.0 ponto)
 
 ```mermaid
 flowchart TD
-A([INICIO]) --> B([FIM])
+A([INICIO]) --> B{{Digite sua idade:}}
+B-->C[/idade/]
+C-->D{7>=idade e idade>=5}
+D-->|sim|E{{você pertence a categoria infantil A}}
+D-->|não|F{10>=idade e idade>=8}
+F-->|sim|G{{você pertence a categoria infantil B}}
+F-->|não|H{13>=idade e idade>=11}
+H-->|sim|I{{você pertence a categoria juvenil A}}
+H-->|não|J{17>=idade e idade>=14}
+J-->|sim|K{{você pertence a categoria juvenil B}}
+J-->|Não|L{idade>=18}
+L-->|sim|M{{você pertence a categoria adulto}}
+L-->|não|N{{Você não pertence a nenhuma categoria}}
+N-->O([Fim])
+E-->O
+G-->O
+I-->O
+K-->O
+M-->O
 ```
-
 #### Pseudocódigo (1.0 ponto)
 
 ```
-Algoritmo ClassificaCategoria
-FIM_ALGORITMO
+Algoritmo categoria_idade
+DECLARE idade: REAL
+INÍCIO:
+ESCREVA"Digite sua idade:"
+LEIA idade
+SE 7>=idade>=5 ENTÃO
+	ESCREVA"você pertence a categoria infantil A"
+SE 10>=idade>=8 ENTÃO
+	ESCREVA"você pertence a categoria infantil B"
+SE 13>=idade>=11 ENTÃO
+	ESCREVA"você pertence a categoria juvenil A"
+SE 17>=idade>=14 ENTÃO
+	ESCREVA"você pertence a categoria juvenil B"
+SE idade>=18 ENTÃO
+	ESCREVA"você pertence a categoria adulto"			
+SENAO
+	ESCREVA "Você não pertence a nenhuma categoria"
+FIM_SE
+FIM
 ```
 
 #### Teste de mesa (0.5 ponto)
 
-| nome_coluna1 | nome_coluna2 | nome_coluna3 | nome_coluna4 | nome_coluna5 | 
-|      --      |      --      |      --      |      --      |      --      | 
-| Adicione     | espaço       | se quiser    |  alinhar     | as barras    |
-| verticais,   | mas          | não é        | obrigatório. | Entendido ?  |
+| idade |Saída|
+|      --      |      --      |    
+| 6| você pertence a categoria infantil A| 
+| 9| você pertence a categoria infantil B| 
+| 13| você pertence a categoria juvenil A| 
+| 16| você pertence a categoria juvenil B| 
+| 19| você pertence a categoria adulto| 
+| 2| você não pertence a nenhuma categoria| 
