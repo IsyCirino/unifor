@@ -101,7 +101,7 @@ Leia uma temperatura dada em Celsius (C) e imprima o equivalente em Fahrenheit (
 flowchart TD
 A([INICIO]) --> B{{Digite a temperatura em Celsius:}}
 B-->C[/Tc/]
-C-->D[Tf=(9/5)Tc + 32]
+C-->D["Tf=(9/5)Tc + 32"]
 D-->E{{A temperatura em Fahrenheit é: ,Tf}}
 ```
 
