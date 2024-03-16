@@ -65,6 +65,7 @@ G-->H{{Digite o quarto número:}}
 H-->I[/n4/]
 I-->J["media=(n1+n2+n3+n4)/4"]
 J-->K{{Média igual à ,media}}
+k-->L([Fim])
 ```
 
 #### Pseudocódigo (1.0 ponto)
@@ -103,6 +104,7 @@ A([INICIO]) --> B{{Digite a temperatura em Celsius:}}
 B-->C[/Tc/]
 C-->D["Tf=(9/5)Tc + 32"]
 D-->E{{A temperatura em Fahrenheit é: ,Tf}}
+E-->F([Fim])
 ```
 
 #### Pseudocódigo (1.0 ponto)
