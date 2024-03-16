@@ -99,22 +99,30 @@ Leia uma temperatura dada em Celsius (C) e imprima o equivalente em Fahrenheit (
 
 ```mermaid
 flowchart TD
-A([INICIO]) --> B([FIM])
+A([INICIO]) --> B{{Digite a temperatura em Celsius:}}
+B-->C[/Tc/]
+C-->D[Tf=(9/5)Tc + 32]
+D-->E{{A temperatura em Fahrenheit é: ,Tf}}
 ```
 
 #### Pseudocódigo (1.0 ponto)
 
 ```
-Algoritmo ConverteCelsiusFarenheit
-FIM_ALGORITMO
+Algoritmo temperatura
+DECLARE Tc,Tf: REAL
+INÍCIO:
+ESCREVA"Digite a temperatura em Celsius:"
+LEIA Tc
+Tf <- (9/5)Tc+32
+ESCREVA "A temperatura em Fahrenheit é:  ", Tf
+FIM
 ```
 
 #### Teste de mesa (0.5 ponto)
 
-| nome_coluna1 | nome_coluna2 | nome_coluna3 | nome_coluna4 | nome_coluna5 | 
-|      --      |      --      |      --      |      --      |      --      | 
-| Adicione     | espaço       | se quiser    |  alinhar     | as barras    |
-| verticais,   | mas          | não é        | obrigatório. | Entendido ?  |
+| Tc|Tf | Saída|
+|      --      |      --      |      --      |  
+| 0| 32| A temperatura em Fahrenheit é:  32 | 
 
 ### Exercício 03 (2.5 pontos)
 Receba dois números reais e um operador e efetue a operação correspondente com os valores recebidos (operandos). 
