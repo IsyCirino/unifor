@@ -55,22 +55,42 @@ Calcule a média de quatro números inteiros dados.
 
 ```mermaid
 flowchart TD
-A([INICIO]) --> B([FIM])
+A([INICIO]) --> B{{Digite o primeiro número:}}
+B-->C[/n1/]
+C-->D{{Digite o segundo número:}}
+D-->E[/n2/]
+E-->F{{Digite o terceiro número:}}
+F-->G[/n3/]
+G-->H{{Digite o quarto número:}}
+H-->I[/n4/]
+I-->J["media=(n1+n2+n3+n4)/4"]
+J-->K{{Média igual à ,media}}
 ```
 
 #### Pseudocódigo (1.0 ponto)
 
 ```
-Algoritmo Media
-FIM_ALGORITMO
+Algoritmo media_num
+DECLARE n1,n2,n3,n4, media: INTEIRO
+INÍCIO:
+ESCREVA"Digite o primeiro nùmero:"
+LEIA n1
+ESCREVA"Digite o segundo nùmero:"
+LEIA n2
+ESCREVA"Digite o terceiro nùmero:"
+LEIA n3
+ESCREVA"Digite o quarto nùmero:"
+LEIA n4
+media <- (n1+n2+n3+n4)/4
+ESCREVA " Média igual à ", media
+FIM
 ```
 
 #### Teste de mesa (0.5 ponto)
 
-| nome_coluna1 | nome_coluna2 | nome_coluna3 | nome_coluna4 | nome_coluna5 | 
-|      --      |      --      |      --      |      --      |      --      | 
-| Adicione     | espaço       | se quiser    |  alinhar     | as barras    |
-| verticais,   | mas          | não é        | obrigatório. | Entendido ?  |
+| n1|n2 | n3| n4  | media |Saída|
+|      --      |      --      |      --      |       --      |   --      | --      |   
+| 7| 2| 5| 3|8,5| Média igual à 8,5
 
 ### Exercício 02 (2.5 pontos)
 Leia uma temperatura dada em Celsius (C) e imprima o equivalente em Fahrenheit (F). (Fórmula de conversão: F = (9/5) * C + 32)
