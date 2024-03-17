@@ -130,26 +130,76 @@ FIM
 Receba dois números reais e um operador e efetue a operação correspondente com os valores recebidos (operandos). 
 O algoritmo deve retornar o resultado da operação selecionada simulando todas as operações de uma calculadora simples.
 
+
 #### Fluxograma (1.0 ponto)
 
 ```mermaid
 flowchart TD
-A([INICIO]) --> B([FIM])
+A([INICIO]) --> B{{Digite o primeiro número:}}
+B-->C[/n1/]
+C-->D{{Digite o segundo número:}}
+D-->E[/n2/]
+E-->F{{"Digite um operador (+,-,*,/): "}}
+F-->G[/op/]
+G-->H{op == +}
+H-->|sim|I[r=n1+n2]
+H-->|não|J{op == -}
+J-->|sim|K[r=n1-n2]
+J-->|não|L{op == *}
+L-->|sim|M[r=n1*n2]
+L-->|não|N{op == /}
+N-->|sim|O[r=n1/n2]
+N-->|não|P{{O programa não possui esse operador}}
+I-->R{{O resultado de, n1, op, n2, é ,r.}}
+K-->R
+M-->R
+O-->R
+R-->X([Fim])
+P-->X
 ```
 
 #### Pseudocódigo (1.0 ponto)
 
 ```
 Algoritmo Calculadora
+DECLARE n1,n2,r: REAL
+DECLARE op: TEXTO
+DECLARE v: BOOLEANO
+INÍCIO:
+ESCREVA "Digite o primeiro número: "
+LEIA n1
+ESCREVA "Digite o segundo número: "
+LEIA n2
+ESCREVA "Digite um operador (+,-,*,/):"
+LEIA op
+v <- TRUE
+SE op == + ENTÃO
+	r <- n1+n2
+SE op == - ENTÃO
+	r <- n1-n2
+SE op == * ENTÃO
+	r <- n1*n2
+SE op == / ENTÃO
+	r <- n1/n2
+SENAO
+	v <- FAlSE
+FIM_SE
+SE v == True ENTÂO
+	ESCREVA "O resultado de ", n1, op, n2," é ",r.
+SENAO
+	ESCREVA "O programa não possui esse operador"
 FIM_ALGORITMO
 ```
 
 #### Teste de mesa (0.5 ponto)
 
-| nome_coluna1 | nome_coluna2 | nome_coluna3 | nome_coluna4 | nome_coluna5 | 
-|      --      |      --      |      --      |      --      |      --      | 
-| Adicione     | espaço       | se quiser    |  alinhar     | as barras    |
-| verticais,   | mas          | não é        | obrigatório. | Entendido ?  |
+| n1 | n2 | op|op==+|op==-|op==*|op==/|v | saída | 
+|      --      |      --      |      --      |      --      |      --      |  --      |  --      |  --      |  --      | 
+| 1  | 2      | +   |  T  | F |F|F|T| O resultado de 1 + 2 é 3
+| 2  | 1      | -   |  F  | T |F|F|T| O resultado de 2 - 1 é 1 |
+| 3  | 2      | *  |  F | F |T|F|T| O resultado de 3 * 2 é 6
+| 4 | 2      | /  |  F  | F |F|T|T| O resultado de 4 / 2 é 2
+| 1  | 2      | ?   |  F  | F |F|F|F| O programa não possui esse operador
 
 ### Exercício 04 (2.5 pontos)
 Elaborar um algoritmo que, dada a idade, classifique nas categorias: infantil A (5 - 7 anos), infantil B (8 -10 anos), juvenil A (11 - 13 anos), juvenil B (14 -17 anos) e adulto (maiores que 18 anos).
