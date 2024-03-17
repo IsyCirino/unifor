@@ -1,15 +1,15 @@
 <img src="https://drive.google.com/uc?id=1SOzRTjUt7cuBJpSqoK90fcAiKBrnpUJo" width="400">
 
-**Curso:** preencha com seus dados <br>
-**Disciplina:** preencha com seus dados <br>
-**Código/Turma:** preencha com seus dados <br>
+**Curso:** Engenharia da Computação <br>
+**Disciplina:** Raciocínio lógico e algorítmo <br>
+**Código/Turma:** T998-08 <br>
 **Professor:** Ricardo Carubbi <br>
-**Data:** preencha com a data de envio <br>
-**Aluno(a):** preencha com seus dados <br>
-**Matrícula:** preencha com seus dados <br>
+**Data:** 18/03/2024 <br>
+**Aluno(a):** Ian Carvalho Cirino <br>
+**Matrícula:** 2410304 <br>
 
-**1a chamada (Sim/Não):** preencha com a opção correta <br>
-**2a chamada (Sim/Não):** preencha com a opção correta
+**1a chamada (Sim/Não):** sim <br>
+**2a chamada (Sim/Não):** não
 
 # Avaliação Diagnóstica 1
 
