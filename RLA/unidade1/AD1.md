@@ -45,27 +45,45 @@ Por exemplo, se na apresentação do exercício, o aluno atenter parcialmente os
 ### Questão 1 - Troca dos valores de duas variáveis (1 ponto)
 
 Dadas duas variáveis, $a$ e $b$, implemente e teste um algoritmo para trocar os valores atribuídos a elas.
+
 #### Fluxograma (0.25 ponto)
 
 ```mermaid
 flowchart TD
-A([INICIO]) --> B([FIM])
+A([INICIO]) --> B{{Digite o valor de a: }}
+B-->C[/a/]
+C-->D{{Digite o valor de b: }}
+D-->E[/b/]
+E-->F[c=b]
+F-->G[b=a]
+G-->H[a=c]
+H-->I{{a =,a, b = ,b}}
+I-->J([Fim])
 ```
 
 #### Pseudocódigo (0.5 ponto)
 
 ```
 Algoritmo TrocaValores
+DECLARE a,b,c : REAL
+INÍCIO:
+ESCREVA "Digite o valor de a: "
+LEIA a
+ESCREVA "Digite o valor de b: "
+LEIA b
+c <- b
+b <- a
+a <- c
+ESCREVA "a = ",a," b = ",b
 FIM_ALGORITMO
 ```
 
 #### Teste de mesa (0.25 ponto)
 
-| nome_coluna1 | nome_coluna2 | nome_coluna3 | nome_coluna4 | nome_coluna5 | 
-|      --      |      --      |      --      |      --      |      --      | 
-| Adicione     | espaço       | se quiser    |  alinhar     | as barras    |   
-| verticais,   | mas          | não é        | obrigatório. | Entendido ?  |
-
+| a | b | c | a | b | Saída|
+|      --      |      --      |      --      |      --      |      --      |   --      | 
+| 1  | 2 | 2   |  2     |1  |  a = 2 b = 1 |
+| 4|3|3    | 3 | 4| a = 3 b = 4
 ### Questão 2 - Contagem (1 ponto)
 
 Dado um conjunto $n$ de notas de alunos em um exame, implemente e teste um algoritmo para fazer uma contagem $cont$ do número de alunos que foram aprovados no exame. 
