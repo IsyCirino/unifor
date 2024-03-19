@@ -201,27 +201,46 @@ Dado um conjunto de $n$ termos da série, implemente e teste um algoritmo para c
 
 $$ S = \frac{1}{2} + \frac{3}{4} + \frac{5}{6} + \frac{7}{8} + \dots $$
 
+
 #### Fluxograma (0.25 ponto)
 
 ```mermaid
 flowchart TD
-A([INICIO]) --> B([FIM])
+A([INICIO]) --> B{{Digite a quantidade de termos: }}
+B-->C[/n/]
+C-->F[/sum = 0/]
+F-->D[[i DE 1 ATÉ n PASSO 2]]
+D-->|verdadeiro|E["sum+=i/(i+1)"]
+E-->|loop|D
+D-->|falso|G{{A soma da serie de termos resulta em ,sum}}
+
 ```
 
 #### Pseudocódigo (0.5 ponto)
 
 ```
-Algoritmo ContaAprovacoes
+Algoritmo SerieTermos
+DECLARE i,n: INTEIRO
+DECLARE sum: REAL
+INÍCIO:
+ESCREVA"Digite a quantidade de termos: "
+LEIA n
+sum <- 0
+PARA i DE 1 ATÉ n PASSO 2 FAÇA
+	sum <- sum + i/(i+1)
+FIM_PARA
+ESCREVA "A soma da serie de termos resulta em ",sum
 FIM_ALGORITMO
 ```
 
 #### Teste de mesa (0.25 ponto)
 
-| nome_coluna1 | nome_coluna2 | nome_coluna3 | nome_coluna4 | nome_coluna5 | 
-|      --      |      --      |      --      |      --      |      --      | 
-| Adicione     | espaço       | se quiser    |  alinhar     | as barras    |
-| verticais,   | mas          | não é        | obrigatório. | Entendido ?  |
-
+| n | i | sum | Saída | 
+|      --      |      --      |      --      |      --      |    
+| 3 | 1   | 0   |  -   | -  |
+| - |1       | 0.5    |  
+|  -|2       | 1.25    |  
+| - | 3        |2.125     | A soma da serie de termos resulta em 2.125
 ### Questão 5 - Cálculo fatorial (2 pontos)
 
 Dado um número $n$, implemente e teste um algoritmo para calcular o fatorial de $n$ (escrito como $n!$), onde $n ≥ 0$.
