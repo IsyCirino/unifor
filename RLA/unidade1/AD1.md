@@ -4,7 +4,7 @@
 **Disciplina:** Raciocínio lógico e algorítmo <br>
 **Código/Turma:** T998-08 <br>
 **Professor:** Ricardo Carubbi <br>
-**Data:** 18/03/2024 <br>
+**Data:** 19/03/2024 <br>
 **Aluno(a):** Ian Carvalho Cirino <br>
 **Matrícula:** 2410304 <br>
 
