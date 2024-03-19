@@ -54,7 +54,7 @@ A([INICIO]) --> B{{Digite o valor de a: }}
 B-->C[/a/]
 C-->D{{Digite o valor de b: }}
 D-->E[/b/]
-E-->F[c=b]
+E-->F[/c=b/]
 F-->G[b=a]
 G-->H[a=c]
 H-->I{{a =,a, b = ,b}}
