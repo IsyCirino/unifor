@@ -89,26 +89,52 @@ FIM_ALGORITMO
 Dado um conjunto $n$ de notas de alunos em um exame, implemente e teste um algoritmo para fazer uma contagem $cont$ do número de alunos que foram aprovados no exame. 
 Será considerado aprovado o aluno que tirar $nota$ 50 ou maior (no intervalo de 0 a 100).
 
+
 #### Fluxograma (0.25 ponto)
 
 ```mermaid
 flowchart TD
-A([INICIO]) --> B([FIM])
+A([INICIO]) --> B{{Digite o número de notas: }}
+B-->C[/n/]
+C-->H[/contA=0/]
+H-->D[[i ATÉ n PASSO 1]]
+D-->|verdadeiro|E{{Digite nota, i:}}
+E-->F[/nota/]
+F-->G{nota>=50}
+G-->|sim|I[contA+=1]
+G-->|não|D
+I-->|loop|D
+D-->|falso|S{{contA, alunos foram aprovados!}}
+S-->R([Fim])
 ```
 
 #### Pseudocódigo (0.5 ponto)
 
 ```
 Algoritmo ContaAprovacoes
+DECLARE n,i,contA: INTEIRO
+DECLARE nota: REAL
+INÍCIO:
+ESCREVA"Digite o número de notas: "
+LEIA n
+contA <- 0
+PARA i DE 1 ATÉ n PASSO 1 FAÇA
+	ESCREVA"Digite nota ",i," :"
+	LEIA nota
+	SE nota>=50 ENTÃO
+		contA+=1
+	FIM_SE
+ESCREVA contA," alunos foram aprovados!"
 FIM_ALGORITMO
 ```
 
 #### Teste de mesa (0.25 ponto)
 
-| nome_coluna1 | nome_coluna2 | nome_coluna3 | nome_coluna4 | nome_coluna5 | 
+| n | i | nota | nota>=50 | Saída | 
 |      --      |      --      |      --      |      --      |      --      | 
-| Adicione     | espaço       | se quiser    |  alinhar     | as barras    |
-| verticais,   | mas          | não é        | obrigatório. | Entendido ?  |
+| 3   | 1      | 30   |  F   |   |
+| -  | 2          | 50        | T |   |
+| -  | 3        | 70        | T | 2 alunos foram aprovados!  |
 
 ### Questão 3 - Soma de um conjunto de números (1 ponto)
 
