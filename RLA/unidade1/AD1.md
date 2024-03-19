@@ -122,8 +122,9 @@ PARA i DE 1 ATÉ n PASSO 1 FAÇA
 	ESCREVA"Digite nota ",i," :"
 	LEIA nota
 	SE nota>=50 ENTÃO
-		contA+=1
+		contA <- contA + 1
 	FIM_SE
+FIM_PARA
 ESCREVA contA," alunos foram aprovados!"
 FIM_ALGORITMO
 ```
@@ -145,22 +146,54 @@ Aceite apenas $n$ maior ou igual a zero.
 
 ```mermaid
 flowchart TD
-A([INICIO]) --> B([FIM])
+A([INICIO]) --> B{{Digite a quantidade de números: }}
+B-->C[/n/]
+C-->D{n<0}
+D-->|sim|E{{Digite um valor positivo}}
+E-->|loop|B
+D-->I[sum=0]
+I-->|não|F[[i DE 1 ATÉ n PASSO 1]]
+F-->|verdadeiro|G{{Digite um número qualquer:}}
+G-->H[/num/]
+H-->J[sum+=num]
+J-->|loop|F
+F-->|falso|K{{soma dos números igual à: , sum}}
 ```
 
 #### Pseudocódigo (0.5 ponto)
 
 ```
-Algoritmo ContaAprovacoes
+Algoritmo SomaNúmeros
+DECLARE n: INTEIRO
+DECLARE num: REAL
+INÍCIO:
+ENQUANTO VERDADEIRO FAÇA
+	ESCREVA "Digite a quantidade de números: "
+	LEIA n
+	SE n<0 ENTÃO
+		ESCREVA"Digite um valor positivo!"
+	SENAO
+		QUEBRE_LOOP
+	FIM_SE
+FIM_ENQUANTO
+sum <- 0
+PARA i DE 1 ATÉ n PASSO 1 FAÇA
+	ESCREVA"Digite um número qualquer"
+	LEIA num
+	sum <- sum + num
+FIM_PARA
+ESCREVA "A soma dos números foi ", sum
 FIM_ALGORITMO
 ```
 
 #### Teste de mesa (0.25 ponto)
 
-| nome_coluna1 | nome_coluna2 | nome_coluna3 | nome_coluna4 | nome_coluna5 | 
+| n | n<0 | i | num | Saída | 
 |      --      |      --      |      --      |      --      |      --      | 
-| Adicione     | espaço       | se quiser    |  alinhar     | as barras    |
-| verticais,   | mas          | não é        | obrigatório. | Entendido ?  |
+| -2  | T    | 0   |  -   | Digite um valor positivo!  |
+| 3 | F         | 1     | 5.5 |   |
+| -  | -        | 2      |9|   |
+| -  | -        | 3      | -1.5| A soma dos números foi 13 |
 
 ### Questão 4 - Cálculo de uma série (1 ponto)
 
