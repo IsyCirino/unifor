@@ -303,47 +303,114 @@ Gerar e imprimir os $n$ primeiros termos da sequência de Fibonacci, onde $n ≥
 Os primeiros termos são: $0, 1, 1, 2, 3, 5, 8, 13, \dots$ <br>
 Cada termo, além dos dois primeiros, é derivado da soma dos seus dois antecessores mais próximos.
 
-#### Fluxograma (0.5 ponto)
+
+#### Fluxograma (0.25 ponto)
 
 ```mermaid
 flowchart TD
-A([INICIO]) --> B([FIM])
+A([INICIO]) --> B{{Digite um número inteiro positivo n: }}
+B-->K[/n/]
+B-->C{n>=1}
+C-->|não|D{{número inválido. Tente novamente!}}
+D-->|loop|B
+C-->|sim|E[/termoA = 0, termoB=1/]
+E-->F[[i DE 0 ATÉ n PASSO 1]]
+F-->|verdadeiro|G{{termoA}}
+G-->H[termoA+=termoB]
+H-->I[termoB+=termoA]
+I-->|loop|F
+F-->|falso|J([Fim])
+
+
 ```
 
-#### Pseudocódigo (1.0 ponto)
+#### Pseudocódigo (0.5 ponto)
 
 ```
-Algoritmo ContaAprovacoes
+Algoritmo Fibonacci
+DECLARE i,n,termoA,termoB: INTEIRO
+INÍCIO:
+ESCREVA"Digite um número inteiro positivo n: "
+LEIA n
+ENQUANTO n<1 FAÇA
+	ESCREVA"Número inválido. Tente novamente!"
+	ESCREVA"Digite um número inteiro positivo n: "
+	LEIA n
+FIM_ENQUANTO
+termoA <- 0
+termoB <- 1
+PARA i DE 1 ATÉ n PASSO 1 FAÇA
+	ESCREVA "",termoA,""
+	termoA <- termoA + termoB
+	termoB <- termoB + termoA
+FIM_PARA
 FIM_ALGORITMO
 ```
-#### Teste de mesa (0.5 ponto)
 
-| nome_coluna1 | nome_coluna2 | nome_coluna3 | nome_coluna4 | nome_coluna5 | 
-|      --      |      --      |      --      |      --      |      --      | 
-| Adicione     | espaço       | se quiser    |  alinhar     | as barras    |
-| verticais,   | mas          | não é        | obrigatório. | Entendido ?  |
+#### Teste de mesa (0.25 ponto)
+
+| n | n<1 |i| termoA| termoB| Saída|
+|      --      |      --      |      --      |      --      |     --      |     --      |    
+| 0| T  | 0  | 0 | 1 |Número inválido. Tente novamente!|
+| 4| F  | 0  | 0 | 1 |0|
+| 4| F  | 1  | 1 | 1 |1|
+| 4| F  | 2  | 1| 2|1|
+| 4| F  | 3  | 2 | 3| 2|
 
 ### Questão 7 - Inversão dos dígitos de um número inteiro (2 pontos)
 
 Implemente e teste um algoritmo para inverter a ordem dos dígitos de um número inteiro positivo de dois dígitos.
 
-#### Fluxograma (0.5 ponto)
+
+#### Fluxograma (0.25 ponto)
 
 ```mermaid
 flowchart TD
-A([INICIO]) --> B([FIM])
+A([INICIO]) --> B{{Digite um número inteiro de dois dígitos}}
+B-->C[/num/]
+C-->D{num<10 ou num>99}
+D-->|sim|E{{Esse número é inválido. Tente novamente!}}
+E-->|loop|B
+D-->|não|F[/contD=0/]
+F-->G{contD*10<num-10}
+G-->|sim|H[contD+=1]
+H-->|loop|G
+G-->|não|I[/contU = num - 10*contD/]
+I-->J{{contU contD}}
+J-->L([Fim])
+
+
 ```
 
-#### Pseudocódigo (1.0 ponto)
+#### Pseudocódigo (0.5 ponto)
 
 ```
-Algoritmo ContaAprovacoes
+Algoritmo TrocaDezenasUnidades
+DECLARE num,contD,contU: INTEIRO
+INÍCIO:
+ESCREVA"Digite um número inteiro de dois dígitos"
+LEIA num
+ENQUANTO num>99 OU num<10 FAÇA
+	ESCREVA"Esse número é inválido. Tente novamente!"
+	ESCREVA"Digite um número inteiro de dois dígitos"
+	LEIA num
+PARA_ENQUANTO
+contD <- 1
+ENQUANTO num-10 > contD*10
+	contD <- contD +1
+PARAR_ENQUANTO
+contU <- num - contD*10
+ESCREVA"",contU,contD,""
 FIM_ALGORITMO
 ```
 
-#### Teste de mesa (0.5 ponto)
+#### Teste de mesa (0.25 ponto)
 
-| nome_coluna1 | nome_coluna2 | nome_coluna3 | nome_coluna4 | nome_coluna5 | 
-|      --      |      --      |      --      |      --      |      --      | 
-| Adicione     | espaço       | se quiser    |  alinhar     | as barras    |
-| verticais,   | mas          | não é        | obrigatório. | Entendido ?  |
+| num | num>99 ou num<10 |contD|contU| Saída|
+|      --      |      --      |      --      |      --      |     --      
+|4|T|||Esse número é inválido. Tente novamente!|
+|102|T|||Esse número é inválido. Tente novamente!|
+|43|F|1|||
+|43|F|2|||
+|43|F|3|||
+|43|F|4|3|34|
