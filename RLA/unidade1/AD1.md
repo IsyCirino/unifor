@@ -245,26 +245,54 @@ FIM_ALGORITMO
 
 Dado um número $n$, implemente e teste um algoritmo para calcular o fatorial de $n$ (escrito como $n!$), onde $n ≥ 0$.
 
-#### Fluxograma (0.5 ponto)
+
+#### Fluxograma (0.25 ponto)
 
 ```mermaid
 flowchart TD
-A([INICIO]) --> B([FIM])
+A([INICIO]) --> B{{Digite um número inteiro positivo n: }}
+B-->C{n>=0}
+C-->|não|D{{Número inválido. Tente novamente!}}
+D-->|loop|B
+C-->|sim|E[fat=1]
+E-->F[[i DE 1 ATÉ n PASSO 1]]
+F-->|verdadeiro|G[fat*=i]
+G-->|loop|F
+F-->|falso|H{{O fatorial de ,n, é ,fat}}
+
+
 ```
 
-#### Pseudocódigo (1.0 ponto)
+#### Pseudocódigo (0.5 ponto)
 
 ```
-Algoritmo ContaAprovacoes
+Algoritmo Fatorial
+DECLARE i,n,fat: INTEIRO
+INÍCIO:
+ESCREVA"Digite um número inteiro positivo n: "
+LEIA n
+ENQUANTO n<0 FAÇA
+	ESCREVA"Número inválido. Tente novamente!"
+	ESCREVA"Digite um número inteiro positivo n: "
+	LEIA n
+FIM_ENQUANTO
+fat <- 1
+PARA i DE 1 ATÉ n PASSO 1 FAÇA
+	fat <- fat*i
+FIM_PARA
+ESCREVA"O fatorial de ",n," é: ",fat
 FIM_ALGORITMO
 ```
 
-#### Teste de mesa (0.5 ponto)
+#### Teste de mesa (0.25 ponto)
 
-| nome_coluna1 | nome_coluna2 | nome_coluna3 | nome_coluna4 | nome_coluna5 | 
-|      --      |      --      |      --      |      --      |      --      | 
-| Adicione     | espaço       | se quiser    |  alinhar     | as barras    |
-| verticais,   | mas          | não é        | obrigatório. | Entendido ?  |
+| n | n<0 |i| fat| Saída | 
+|      --      |      --      |      --      |      --      |     --      |    
+| -2| T  | 1  | 1  | Número inválido. Tente novamente! |
+| 4| F  | 1  | 1  |  |
+| 4| F | 2  | 2  | |
+| 4|F | 3  | 6  | |
+| 4| F  | 4  | 24  | O fatorial de 4 é: 24|
 
 ### Questão 6 - Geração da sequência de Fibonacci (2 pontos)
 
