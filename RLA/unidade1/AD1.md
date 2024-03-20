@@ -158,6 +158,7 @@ G-->H[/num/]
 H-->J[sum+=num]
 J-->|loop|F
 F-->|falso|K{{soma dos números igual à: , sum}}
+K-->L([FIM])
 ```
 
 #### Pseudocódigo (0.5 ponto)
@@ -213,6 +214,7 @@ F-->D[[i DE 1 ATÉ n PASSO 2]]
 D-->|verdadeiro|E["sum+=i/(i+1)"]
 E-->|loop|D
 D-->|falso|G{{A soma da serie de termos resulta em ,sum}}
+G-->L([Fim])
 
 ```
 
@@ -259,6 +261,7 @@ E-->F[[i DE 1 ATÉ n PASSO 1]]
 F-->|verdadeiro|G[fat*=i]
 G-->|loop|F
 F-->|falso|H{{O fatorial de ,n, é ,fat}}
+H-->L([Fim])
 
 
 ```
