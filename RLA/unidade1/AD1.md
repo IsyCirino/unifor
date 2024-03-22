@@ -341,6 +341,7 @@ termoA <- 0
 termoB <- 1
 PARA i DE 1 ATÉ n PASSO 1 FAÇA
 	ESCREVA "",termoA,""
+	ESCREVA "", termoB,""
 	termoA <- termoA + termoB
 	termoB <- termoB + termoA
 FIM_PARA
