@@ -384,7 +384,7 @@ E --> W
 #### Pseudocódigo (0.5 pontos)
 ``` 
 Algoritmo inversãoDigitos
-DECLARE num,contD,contU: INTEIRO
+DECLARE num, numInverso, digito: INTEIRO
 INÍCIO:
 ESCREVA"Digite um número inteiro positivo:"
 LEIA num
