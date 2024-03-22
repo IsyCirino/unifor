@@ -366,20 +366,19 @@ Implemente e teste um algoritmo para inverter a ordem dos dígitos de um número
 
 ```mermaid
 flowchart TD
-A([INICIO]) --> B{{Digite um número inteiro de dois dígitos}}
-B-->C[/num/]
-C-->D{num<10 ou num>99}
-D-->|sim|E{{Esse número é inválido. Tente novamente!}}
-E-->|loop|B
-D-->|não|F[/contD=0/]
-F-->G{contD*10<num-10}
-G-->|sim|H[contD+=1]
-H-->|loop|G
-G-->|não|I[/contU = num - 10*contD/]
-I-->J{{contU contD}}
-J-->L([Fim])
-
-
+A([INICIO]) --> B{{Digite um número inteiro: }}
+B --> C[\num\]
+C --> D{num >= 0}
+D --TRUE--> G[num_inv = 0]
+G --> H{num > 0}
+H --FALSE--> Z{{"Número invertido:", numero_inv}}
+Z --> W([FIM])
+H --TRUE--> I[digito = num % 10]
+I --> J[num_inv = num_inv * 10 + digito]
+J --> K[numero = numero // 10]
+K --LOOP--> H
+D --FALSE--> E{{O número deve ser positivo!}}
+E --> W
 ```
 
 #### Pseudocódigo (0.5 ponto)
@@ -404,13 +403,12 @@ ESCREVA"",contU,contD,""
 FIM_ALGORITMO
 ```
 
-#### Teste de mesa (0.25 ponto)
+#### Teste de mesa
 
-| num | num>99 ou num<10 |contD|contU| Saída|
-|      --      |      --      |      --      |      --      |     --      
-|4|T|||Esse número é inválido. Tente novamente!|
-|102|T|||Esse número é inválido. Tente novamente!|
-|43|F|1|||
-|43|F|2|||
-|43|F|3|||
-|43|F|4|3|34|
+| it | num | num_inv | num > 0 | digito | num = num // 10 | num_inv = (num_inv * 10) + digito | Saída                       |
+| -- | --  | --      | --     | --      | --              | --                                | --                          |
+|    | -1  | 0       | False  |         |                 |                                   | O número deve ser positivo! |
+| 1  | 0   | 0       | False  |         |                 |                                   | Número invertido:: 0        |
+| 1  | 42  | 0       | True   | 2       | 4               | 2                                 |                             |
+| 2  | 4   | 2       | True   | 4       | 0               | 24                                |                             |
+| 3  | 0   | 24      | False  |         |                 |                                   | Número invertido:: 24       |
