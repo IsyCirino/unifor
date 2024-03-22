@@ -381,25 +381,24 @@ D --FALSE--> E{{O número deve ser positivo!}}
 E --> W
 ```
 
-#### Pseudocódigo (0.5 ponto)
-
-```
-Algoritmo TrocaDezenasUnidades
+#### Pseudocódigo (0.5 pontos)
+``` 
+Algoritmo inversãoDigitos
 DECLARE num,contD,contU: INTEIRO
 INÍCIO:
-ESCREVA"Digite um número inteiro de dois dígitos"
+ESCREVA"Digite um número inteiro positivo:"
 LEIA num
-ENQUANTO num>99 OU num<10 FAÇA
-	ESCREVA"Esse número é inválido. Tente novamente!"
-	ESCREVA"Digite um número inteiro de dois dígitos"
-	LEIA num
-PARA_ENQUANTO
-contD <- 1
-ENQUANTO num-10 > contD*10
-	contD <- contD +1
-PARAR_ENQUANTO
-contU <- num - contD*10
-ESCREVA"",contU,contD,""
+SE num<0 ENTÃO
+	ESCREVA"O número deve ser inteiro positivo"
+SENAO
+	numInverso <- 0
+	ENQUANTO num>0 FAÇA
+		digito <- num%10
+		numInverso <- numInverso*10 + digito
+		num <- num//10
+	FIM_ENQUANTO
+	ESCREVA"O inverso do número é ",numInverso
+FIM_SE
 FIM_ALGORITMO
 ```
 
